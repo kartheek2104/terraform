@@ -1,6 +1,6 @@
 provider "aws" {
   region = "us-east-1"
-  //shared_credentials_files = "C:/Users/SREEJA/.aws/credentials" 
+  //shared_credentials_files = "" 
   }
 
 variable vpc_cidr_block {}
@@ -15,7 +15,7 @@ resource "aws_vpc" "myapp-vpc" {
   }
 }
 
-resource "aws_subnet" "name" {
+resource "aws_subnet" "myapp-subnet-1" {
    vpc_id = aws_vpc.myapp-vpc.id
    cidr_block = var.subnet_cidr_block
    availability_zone = var.avail_zone
